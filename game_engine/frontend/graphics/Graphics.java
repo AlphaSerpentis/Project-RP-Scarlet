@@ -2,6 +2,8 @@ package game_engine.frontend.graphics;
 
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+
 /**
  * 
  * @author Amethyst C - 2020
@@ -56,9 +58,21 @@ public class Graphics {
 	 * graphicalUserInterface class contains all the graphical functions IN RELATION TO GUIs only.
 	 *
 	 */
-	public class GraphicalUserInterface {
+	public static class GraphicalUserInterface {
 		
 		
+		
+		public GraphicalUserInterface(int xSize, int ySize) {
+			JFrame f = new JFrame();
+			
+			f.setSize(xSize, ySize);
+			f.setLayout(null);
+			f.setResizable(false); // Makes it so it's not resizable
+			f.setVisible(true);
+			
+			f.setDefaultCloseOperation(2); // Disposes the frame
+			
+		}
 		
 	}
 	
@@ -95,6 +109,8 @@ public class Graphics {
 		public ArrayList<GraphicalObject> getObjectsToBePainted() {
 			return objectsToBePainted;
 		}
+		
+		// -- End Simple Setter & Getter Methods
 		
 		public void paint() {
 			

@@ -1,4 +1,6 @@
-package game_engine.backend.events;
+package game_engine.backend.events.main;
+
+import game_engine.backend.events.Event;
 
 public class CollisionDetect extends Event{
 

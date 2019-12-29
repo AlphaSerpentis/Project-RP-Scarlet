@@ -1,4 +1,6 @@
-package game_engine.backend.events;
+package game_engine.backend.events.handlers;
+
+import game_engine.backend.events.Event;
 
 public class GraphicsEventHandler extends Event {
 

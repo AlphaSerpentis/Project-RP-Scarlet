@@ -5,8 +5,8 @@ import game_engine.frontend.graphics.Graphics;
 public class Launcher {
 
 	public static void main(String[] args) {
-
 		
+		Graphics g = new Graphics();
 		
 	}
 	

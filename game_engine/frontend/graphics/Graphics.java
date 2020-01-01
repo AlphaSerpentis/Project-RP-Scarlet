@@ -98,6 +98,7 @@ public class Graphics {
 		 */
 		private ArrayList<GraphicalObject> objectsToBePainted = new ArrayList<GraphicalObject>();
 		
+		
 		// Constructors
 		
 		public Painter() {

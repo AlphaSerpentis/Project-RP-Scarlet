@@ -6,6 +6,7 @@ public class Launcher {
 
 	public static void main(String[] args) {
 		
+		System.out.println("[(game.init) Launcher.java] Starting Graphics Process");
 		new Initializer().start(1000,1000); // Start Graphics Process
 		
 	}

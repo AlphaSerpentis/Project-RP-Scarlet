@@ -2,6 +2,8 @@ package game_engine.frontend.graphics;
 
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+
 /**
  * 
  * @author Amethyst C - 2020
@@ -19,8 +21,8 @@ public class Graphics {
 		
 		// Enum
 		public enum graphicalObjectTypes {
-			GUI,
-			GAME,
+			GUI, // Represent GUI objects that do not need to be repainted every time, unless an update occurs
+			GAME, // Represent game objects that are very dynamic and require a lot of repainting
 			CUSTOM
 		}
 		
@@ -56,9 +58,30 @@ public class Graphics {
 	 * graphicalUserInterface class contains all the graphical functions IN RELATION TO GUIs only.
 	 *
 	 */
-	public class GraphicalUserInterface {
+	public static class GraphicalUserInterface {
 		
+		public GraphicalUserInterface(int xSize, int ySize) {
+			JFrame f = new JFrame();
+			
+			f.setSize(xSize, ySize);
+			f.setLayout(null);
+			f.setResizable(false); // Makes it so it's not resizable
+			f.setVisible(true);
+			
+			f.setDefaultCloseOperation(2); // Disposes the frame
+		}
 		
+		public GraphicalUserInterface(int xSize, int ySize, boolean resizable) {
+			JFrame f = new JFrame();
+			
+			f.setSize(xSize, ySize);
+			f.setLayout(null);
+			f.setResizable(resizable);
+			f.setVisible(true);
+		
+			f.setDefaultCloseOperation(2); // Disposes the frame
+			
+		}
 		
 	}
 	
@@ -75,14 +98,20 @@ public class Graphics {
 		 */
 		private ArrayList<GraphicalObject<?>> objectsToBePainted = new ArrayList<GraphicalObject<?>>();
 		
+		
 		// Constructors
 		
 		public Painter() {
 			
 		}
 		
+<<<<<<< HEAD
 		public Painter(ArrayList<GraphicalObject<?>> array) {
 			array.sort(null);
+=======
+		public Painter(ArrayList<GraphicalObject> array) {
+			
+>>>>>>> branch 'master' of https://github.com/AlphaSerpentis/Project-RP-Scarlet.git
 		}
 		
 		// Methods 
@@ -95,6 +124,8 @@ public class Graphics {
 		public ArrayList<GraphicalObject<?>> getObjectsToBePainted() {
 			return objectsToBePainted;
 		}
+		
+		// -- End Simple Setter & Getter Methods
 		
 		public void paint() {
 			

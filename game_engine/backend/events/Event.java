@@ -37,7 +37,6 @@ public abstract class Event {
 	
 	// --- Abstract Methods ---
 	public abstract void action();
-	
 	public abstract String toString();
 	
 }

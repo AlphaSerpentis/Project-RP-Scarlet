@@ -1,12 +1,13 @@
 package game.init;
 
-import game_engine.frontend.graphics.Graphics;
+import game_engine.frontend.graphics.main.Initializer;
 
 public class Launcher {
 
 	public static void main(String[] args) {
 		
-		Graphics g = new Graphics();
+		System.out.println("[(game.init) Launcher.java] Starting Graphics Process");
+		new Initializer().start(1000,1000); // Start Graphics Process
 		
 	}
 	

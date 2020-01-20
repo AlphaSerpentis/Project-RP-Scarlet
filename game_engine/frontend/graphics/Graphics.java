@@ -15,7 +15,7 @@ public class Graphics {
 	 * Object that can be represented in various forms so it can be "painted" onto the screen
 	 *
 	 */
-	public static class GraphicalObject {
+	public static class GraphicalObject<T> {
 		
 		// Enum
 		public enum graphicalObjectTypes {
@@ -73,7 +73,7 @@ public class Graphics {
 		/**
 		 * Contains the list of GraphicalObjects that will be painted
 		 */
-		private ArrayList<GraphicalObject> objectsToBePainted = new ArrayList<GraphicalObject>();
+		private ArrayList<GraphicalObject<?>> objectsToBePainted = new ArrayList<GraphicalObject<?>>();
 		
 		// Constructors
 		
@@ -81,18 +81,18 @@ public class Graphics {
 			
 		}
 		
-		public Painter(ArrayList<GraphicalObject> array) {
+		public Painter(ArrayList<GraphicalObject<?>> array) {
 			array.sort(null);
 		}
 		
 		// Methods 
 		
 		// -- Simple Setter & Getter Methods --
-		public void setObjectsToBePainted(ArrayList<GraphicalObject> array) {
+		public void setObjectsToBePainted(ArrayList<GraphicalObject<?>> array) {
 			objectsToBePainted = array;
 		}
 		
-		public ArrayList<GraphicalObject> getObjectsToBePainted() {
+		public ArrayList<GraphicalObject<?>> getObjectsToBePainted() {
 			return objectsToBePainted;
 		}
 		

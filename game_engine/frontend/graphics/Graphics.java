@@ -1,6 +1,7 @@
 package game_engine.frontend.graphics;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JFrame;
 
@@ -92,6 +93,7 @@ public class Graphics {
 	public class Painter {
 		
 		// Instance Variables
+		public List<?> predefined_graphical_objects = new ArrayList<>();
 		
 		/**
 		 * Contains the list of GraphicalObjects that will be painted
@@ -105,13 +107,8 @@ public class Graphics {
 			
 		}
 		
-<<<<<<< HEAD
 		public Painter(ArrayList<GraphicalObject<?>> array) {
-			array.sort(null);
-=======
-		public Painter(ArrayList<GraphicalObject> array) {
 			
->>>>>>> branch 'master' of https://github.com/AlphaSerpentis/Project-RP-Scarlet.git
 		}
 		
 		// Methods 

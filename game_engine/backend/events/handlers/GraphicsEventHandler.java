@@ -11,6 +11,12 @@ public class GraphicsEventHandler extends Event {
 	}
 
 	@Override
+	public boolean onTrigger() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return null;

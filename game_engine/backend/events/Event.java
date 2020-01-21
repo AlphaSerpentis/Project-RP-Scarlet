@@ -16,7 +16,7 @@ public abstract class Event {
 	 * Sets default constructor (which will be null).
 	 */
 	public Event() {
-		this.name = null;
+		name = null;
 	}
 	
 	/**
@@ -24,7 +24,7 @@ public abstract class Event {
 	 * @param n parameter is the name of the Event instance
 	 */
 	public Event(String n) {
-		this.name = n;
+		name = n;
 	}
 	
 	// Getter Methods
@@ -36,6 +36,14 @@ public abstract class Event {
 	// Misc Methods
 	
 	// --- Abstract Methods ---
+	/**
+	 * An abstract method used when the event is triggered
+	 * @return true or false, depending on the use.
+	 */
+	public abstract boolean onTrigger();
+	/**
+	 * An abstract method used to do something
+	 */
 	public abstract void action();
 	public abstract String toString();
 	

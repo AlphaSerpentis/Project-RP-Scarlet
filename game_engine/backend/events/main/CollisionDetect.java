@@ -9,6 +9,12 @@ public class CollisionDetect extends Event{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public boolean onTrigger() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 	@Override
 	public String toString() {

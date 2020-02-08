@@ -12,24 +12,25 @@ import javax.swing.JFrame;
  */
 public class Graphics {
 	
+	// Enum
+	public enum graphicalObjectTypes {
+		GUI, // Represent GUI objects that do not need to be repainted every time, unless an update occurs
+		GAME, // Represent game objects that are very dynamic and require a lot of repainting
+		CUSTOM
+	}
+	
 	// -- Object Classes -- //
 	
 	/**
 	 * Object that can be represented in various forms so it can be "painted" onto the screen
 	 *
 	 */
-	public static class GraphicalObject<T> {
-		
-		// Enum
-		public enum graphicalObjectTypes {
-			GUI, // Represent GUI objects that do not need to be repainted every time, unless an update occurs
-			GAME, // Represent game objects that are very dynamic and require a lot of repainting
-			CUSTOM
-		}
+	public class GraphicalObject<T extends graphicalObjectTypes> {
 		
 		// Instance Variables
 		
-		private int priorityValue = 0;
+		private int priorityValue = 0; // The higher the value, the more important it is to be painted
+		private boolean visible = false; // Determines if it is visible the next frame, or not
 		
 		// Constructor
 		
@@ -42,9 +43,15 @@ public class Graphics {
 		public void setPriorityValue(int v) {
 			priorityValue = v;
 		}
+		public void setVisible(boolean v) {
+			visible = v;
+		}
 		
 		public int getPriorityValue() {
 			return priorityValue;
+		}
+		public boolean getVisible() {
+			return visible;
 		}
 		
 		public String toString() { //TODO: Finish this whenever this Object is finished.
@@ -80,8 +87,7 @@ public class Graphics {
 			f.setResizable(resizable);
 			f.setVisible(true);
 		
-			f.setDefaultCloseOperation(2); // Disposes the frame
-			
+			f.setDefaultCloseOperation(2); // Disposes the frame	
 		}
 		
 	}
@@ -93,7 +99,6 @@ public class Graphics {
 	public class Painter {
 		
 		// Instance Variables
-		public List<?> predefined_graphical_objects = new ArrayList<>();
 		
 		/**
 		 * Contains the list of GraphicalObjects that will be painted
@@ -125,6 +130,14 @@ public class Graphics {
 		// -- End Simple Setter & Getter Methods
 		
 		public void paint() {
+			
+		}
+		
+		public void add() {
+			
+		}
+		
+		public void remove() {
 			
 		}
 		

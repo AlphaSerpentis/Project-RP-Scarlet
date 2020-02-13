@@ -31,6 +31,7 @@ public class Graphics {
 		
 		private int priorityValue = 0; // The higher the value, the more important it is to be painted
 		private boolean visible = false; // Determines if it is visible the next frame, or not
+		private boolean painted = false; // Used to determine if the object had been painted in the previous frame or not
 		
 		// Constructor
 		
@@ -46,12 +47,18 @@ public class Graphics {
 		public void setVisible(boolean v) {
 			visible = v;
 		}
+		public void setPainted(boolean v) {
+			painted = v;
+		}
 		
 		public int getPriorityValue() {
 			return priorityValue;
 		}
 		public boolean getVisible() {
 			return visible;
+		}
+		public boolean getPainted() {
+			return painted;
 		}
 		
 		public String toString() { //TODO: Finish this whenever this Object is finished.
@@ -129,15 +136,19 @@ public class Graphics {
 		
 		// -- End Simple Setter & Getter Methods
 		
-		public void paint() {
+		public void paint(ArrayList<GraphicalObject<?>> prevPainted) {
+			
+			if(prevPainted == null) {
+				
+			}
 			
 		}
 		
-		public void add() {
+		public void add(GraphicalObject<?> obj) {
 			
 		}
 		
-		public void remove() {
+		public void remove(GraphicalObject<?> obj) {
 			
 		}
 		

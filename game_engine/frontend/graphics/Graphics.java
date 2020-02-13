@@ -93,6 +93,8 @@ public class Graphics {
 	 */
 	public static class GraphicalUserInterface extends GraphicalObject {
 		
+		private Painter p;
+		
 		public GraphicalUserInterface() {
 			
 		}
@@ -143,7 +145,7 @@ public class Graphics {
 	 * Painter class contains all the graphical functions, excluding GUI functions, in which they draw stuff onto the screen.
 	 *
 	 */
-	public static class Painter {
+	public static class Painter implements Runnable {
 		
 		// Instance Variables
 		
@@ -199,6 +201,12 @@ public class Graphics {
 			
 		}
 		public void remove(GraphicalObject obj) {
+			
+		}
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
 			
 		}
 		

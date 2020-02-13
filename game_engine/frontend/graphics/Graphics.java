@@ -25,13 +25,12 @@ public class Graphics {
 	 * Object that can be represented in various forms so it can be "painted" onto the screen
 	 *
 	 */
-	public class GraphicalObject<T extends graphicalObjectTypes> {
+	public class GraphicalObject implements IGraphics {
 		
-		// Instance Variables
-		
-		private int priorityValue = 0; // The higher the value, the more important it is to be painted
-		private boolean visible = false; // Determines if it is visible the next frame, or not
-		private boolean painted = false; // Used to determine if the object had been painted in the previous frame or not
+		public int priorityValue = 0;
+		public int x = 0, y = 0;
+		public boolean visible = false;
+		public boolean painted = false;
 		
 		// Constructor
 		
@@ -40,7 +39,6 @@ public class Graphics {
 		}
 		
 		// Methods
-		
 		public void setPriorityValue(int v) {
 			priorityValue = v;
 		}
@@ -110,7 +108,7 @@ public class Graphics {
 		/**
 		 * Contains the list of GraphicalObjects that will be painted
 		 */
-		private ArrayList<GraphicalObject<?>> objectsToBePainted = new ArrayList<GraphicalObject<?>>();
+		private ArrayList<GraphicalObject> objectsToBePainted = new ArrayList<GraphicalObject>();
 		
 		
 		// Constructors
@@ -119,24 +117,24 @@ public class Graphics {
 			
 		}
 		
-		public Painter(ArrayList<GraphicalObject<?>> array) {
+		public Painter(ArrayList<GraphicalObject> array) {
 			
 		}
 		
 		// Methods 
 		
 		// -- Simple Setter & Getter Methods --
-		public void setObjectsToBePainted(ArrayList<GraphicalObject<?>> array) {
+		public void setObjectsToBePainted(ArrayList<GraphicalObject> array) {
 			objectsToBePainted = array;
 		}
 		
-		public ArrayList<GraphicalObject<?>> getObjectsToBePainted() {
+		public ArrayList<GraphicalObject> getObjectsToBePainted() {
 			return objectsToBePainted;
 		}
 		
 		// -- End Simple Setter & Getter Methods
 		
-		public void paint(ArrayList<GraphicalObject<?>> prevPainted) {
+		public void paint(ArrayList<GraphicalObject> prevPainted) {
 			
 			if(prevPainted == null) {
 				
@@ -144,11 +142,11 @@ public class Graphics {
 			
 		}
 		
-		public void add(GraphicalObject<?> obj) {
+		public void add(GraphicalObject obj) {
 			
 		}
 		
-		public void remove(GraphicalObject<?> obj) {
+		public void remove(GraphicalObject obj) {
 			
 		}
 		

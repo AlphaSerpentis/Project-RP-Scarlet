@@ -175,6 +175,9 @@ public class Graphics {
 		
 	}
 	
+	/**
+	 * The GameFrame class is basically a JFrame
+	 */
 	public static class GameFrame {
 		
 		private Painter p;
@@ -190,6 +193,8 @@ public class Graphics {
 			
 			setXSize(xSize);
 			setYSize(ySize);
+			
+			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		}
 		/**
 		 * Defines the length and height, as well as the position of the JFrame. Does NOT set the frame visible to the user.
@@ -205,6 +210,8 @@ public class Graphics {
 			setYSize(ySize);
 			setXPos(xPos);
 			setYPos(yPos);
+			
+			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		}
 		/**
 		 * Defines the length and height, position of the JFrame, and the visibility to the user.
@@ -222,6 +229,8 @@ public class Graphics {
 			setXPos(xPos);
 			setYPos(yPos);
 			setVisible(visible);
+			
+			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		}
 		
 		public void setXSize(int xSize) {

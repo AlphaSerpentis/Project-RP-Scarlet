@@ -176,7 +176,7 @@ public class Graphics {
 		
 	}
 	
-	public static class GameFrame implements IGraphics {
+	public static class GameFrame {
 		
 		private Painter p;
 		private JFrame f;
@@ -190,63 +190,53 @@ public class Graphics {
 		 * @param ySize
 		 */
 		public GameFrame(int xSize, int ySize) {
+			f = new JFrame();
+			
 			setXSize(xSize);
 			setYSize(ySize);
 		}
 		public GameFrame(int xSize, int ySize, int xPos, int yPos) {
+			f = new JFrame();
 			
+			setXSize(xSize);
+			setYSize(ySize);
+			setXPos(xPos);
+			setYPos(yPos);
 		}
 		public GameFrame(int xSize, int ySize, int xPos, int yPos, boolean visible) {
+			f = new JFrame();
 			
+			setXSize(xSize);
+			setYSize(ySize);
+			setXPos(xPos);
+			setYPos(yPos);
+			setVisible(visible);
 		}
 		
 		public void setXSize(int xSize) {
-			
+			f.setSize(xSize, f.getHeight());
 		}
 		public void setYSize(int ySize) {
-			
+			f.setSize(f.getWidth(), ySize);
 		}
 		public void setXPos(int xPos) {
-			
+			f.setLocation(xPos, f.getY());
 		}
 		public void setYPos(int yPos) {
-			
+			f.setLocation(f.getX(), yPos);
 		}
-
-		@Override
-		public void setPriorityValue(int v) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
 		public void setVisible(boolean v) {
-			// TODO Auto-generated method stub
-			
+			f.setVisible(v);
 		}
-
-		@Override
-		public void setPainted(boolean v) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public int getPriorityValue() {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
-		@Override
 		public boolean getVisible() {
-			// TODO Auto-generated method stub
-			return false;
+			return f.isVisible();
 		}
-
-		@Override
-		public boolean getPainted() {
-			// TODO Auto-generated method stub
-			return false;
+		
+		public Painter getPainter() {
+			return p;
+		}
+		public JFrame getFrame() {
+			return f;
 		}
 		
 	}

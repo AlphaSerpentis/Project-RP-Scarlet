@@ -288,6 +288,13 @@ public class Graphics {
 		}
 		
 		// -- End Simple Setter & Getter Methods
+		public void paint() {
+			
+			if(objectsToBePainted.isEmpty()) {
+				
+			}
+			
+		}
 		public void paint(GraphicalObject go) {
 			
 			if(go == null) {
@@ -295,7 +302,6 @@ public class Graphics {
 			}
 			
 		}
-		
 		public void paint(ArrayList<GraphicalObject> prevPainted) {
 			
 			if(prevPainted == null) {
@@ -304,16 +310,16 @@ public class Graphics {
 			
 		}
 		public void add(ArrayList<GraphicalObject> obj) {
-			
+			objectsToBePainted.addAll(obj);
 		}
 		public void add(GraphicalObject obj) {
-			
+			objectsToBePainted.add(obj);
 		}
 		public void remove(ArrayList<GraphicalObject> obj) {
-			
+			objectsToBePainted.removeAll(obj);
 		}
 		public void remove(GraphicalObject obj) {
-			
+			objectsToBePainted.remove(obj);
 		}
 		
 		public void sortPriority() {

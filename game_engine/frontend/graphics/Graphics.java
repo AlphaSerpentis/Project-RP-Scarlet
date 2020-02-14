@@ -135,9 +135,9 @@ public class Graphics {
 		}
 		/**
 		 * Creates a GraphicalUserInterface instance using X/Y coordinates and setting the instance visible on the frame, but has a low priority value.
-		 * @param x
-		 * @param y
-		 * @param v
+		 * @param x is an integer value representing the position of the GraphicalUserInterface object along the x-axis.
+		 * @param y is an integer value representing the position of the GraphicalUserInterface object along the y-axis.
+		 * @param v is a boolean value that determines if the instance is visible on the frame or not.
 		 */
 		public GraphicalUserInterface(int x, int y, boolean v) {
 			super(0, x, y, v, false);
@@ -181,13 +181,10 @@ public class Graphics {
 		private Painter p;
 		private JFrame f;
 		
-		public GameFrame() {
-			
-		}
 		/**
 		 * Defines the length and height of the JFrame. Does NOT set the frame visible to the user.
-		 * @param xSize
-		 * @param ySize
+		 * @param xSize is an integer value that determines the size of the frame along the x-axis.
+		 * @param ySize is an integer value that determines the size of the frame along the y-axis.
 		 */
 		public GameFrame(int xSize, int ySize) {
 			f = new JFrame();
@@ -195,6 +192,13 @@ public class Graphics {
 			setXSize(xSize);
 			setYSize(ySize);
 		}
+		/**
+		 * Defines the length and height, as well as the position of the JFrame. Does NOT set the frame visible to the user.
+		 * @param xSize is an integer value that determines the size of the frame along the x-axis.
+		 * @param ySize is an integer value that determines the size of the frame along the y-axis.
+		 * @param xPos is an integer value that determines the position of the frame along the x-axis.
+		 * @param yPos is an integer value that determines the position of the frame along the y-axis.
+		 */
 		public GameFrame(int xSize, int ySize, int xPos, int yPos) {
 			f = new JFrame();
 			
@@ -203,6 +207,14 @@ public class Graphics {
 			setXPos(xPos);
 			setYPos(yPos);
 		}
+		/**
+		 * Defines the length and height, position of the JFrame, and the visibility to the user.
+		 * @param xSize is an integer value that determines the size of the frame along the x-axis.
+		 * @param ySize is an integer value that determines the size of the frame along the y-axis.
+		 * @param xPos is an integer value that determines the position of the frame along the x-axis.
+		 * @param yPos is an integer value that determines the position of the frame along the y-axis.
+		 * @param visible is a boolean value that determines if the JFrame is visible to the user or not.
+		 */
 		public GameFrame(int xSize, int ySize, int xPos, int yPos, boolean visible) {
 			f = new JFrame();
 			

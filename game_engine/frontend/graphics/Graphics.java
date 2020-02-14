@@ -93,19 +93,54 @@ public class Graphics {
 	 */
 	public static class GraphicalUserInterface extends GraphicalObject {
 		
-		private Painter p;
-		
+		/**
+		 * <b>NOT RECOMMENDED</b>: Creates a GraphicalUserInterface instance using default values.
+		 */
 		public GraphicalUserInterface() {
-			
+			super(0, 0, 0, false, false);
 		}
-		public GraphicalUserInterface(int xSize, int ySize) {
-			
+		/**
+		 * <b>NOT RECOMMENDED</b>: Creates a GraphicalUserInterface instance using default values, except for the priority value.
+		 * @param pv is an integer value for the "priority value" which is used to determine which gets painted first.
+		 */
+		public GraphicalUserInterface(int pv) {
+			super(pv, 0, 0, false, false);
 		}
-		public GraphicalUserInterface(int xSize, int ySize, int xPos, int yPos) {
-			
+		/**
+		 * Creates a GraphicalUserInterface instance using priority value, and X/Y coordinates, but is NOT visible by default.
+		 * @param pv is an integer value for the "priority value" which is used to determine which gets painted first.
+		 * @param x is an integer value representing the position of the GraphicalUserInterface object along the x-axis.
+		 * @param y is an integer value representing the position of the GraphicalUserInterface object along the y-axis.
+		 */
+		public GraphicalUserInterface(int pv, int x, int y) {
+			super(pv, x, y, false, false);
 		}
-		public GraphicalUserInterface(int xSize, int ySize, int xPos, int yPos, boolean visible) {
-			
+		/**
+		 * Creates a GraphicalUserInterface instance using priority value, X/Y coordinates, and setting the instance visible on the frame.
+		 * @param pv is an integer value for the "priority value" which is used to determine which gets painted first.
+		 * @param x is an integer value representing the position of the GraphicalUserInterface object along the x-axis.
+		 * @param y is an integer value representing the position of the GraphicalUserInterface object along the y-axis.
+		 * @param v is a boolean value that determines if the instance is visible on the frame or not.
+		 */
+		public GraphicalUserInterface(int pv, int x, int y, boolean v) {
+			super(pv, x, y, v, false);
+		}
+		/**
+		 * Creates a GraphicalUserInterface instance using X/Y coordinates, but has a low priority value and is NOT visible by default.
+		 * @param x is an integer value representing the position of the GraphicalUserInterface object along the x-axis.
+		 * @param y is an integer value representing the position of the GraphicalUserInterface object along the y-axis.
+		 */
+		public GraphicalUserInterface(int x, int y) {
+			super(0, x, y, false, false);
+		}
+		/**
+		 * Creates a GraphicalUserInterface instance using X/Y coordinates and setting the instance visible on the frame, but has a low priority value.
+		 * @param x
+		 * @param y
+		 * @param v
+		 */
+		public GraphicalUserInterface(int x, int y, boolean v) {
+			super(0, x, y, v, false);
 		}
 		
 		/*
@@ -138,6 +173,81 @@ public class Graphics {
 			f.setDefaultCloseOperation(2); // Disposes the frame	
 		}
 		*/
+		
+	}
+	
+	public static class GameFrame implements IGraphics {
+		
+		private Painter p;
+		private JFrame f;
+		
+		public GameFrame() {
+			
+		}
+		/**
+		 * Defines the length and height of the JFrame. Does NOT set the frame visible to the user.
+		 * @param xSize
+		 * @param ySize
+		 */
+		public GameFrame(int xSize, int ySize) {
+			setXSize(xSize);
+			setYSize(ySize);
+		}
+		public GameFrame(int xSize, int ySize, int xPos, int yPos) {
+			
+		}
+		public GameFrame(int xSize, int ySize, int xPos, int yPos, boolean visible) {
+			
+		}
+		
+		public void setXSize(int xSize) {
+			
+		}
+		public void setYSize(int ySize) {
+			
+		}
+		public void setXPos(int xPos) {
+			
+		}
+		public void setYPos(int yPos) {
+			
+		}
+
+		@Override
+		public void setPriorityValue(int v) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void setVisible(boolean v) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void setPainted(boolean v) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public int getPriorityValue() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public boolean getVisible() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public boolean getPainted() {
+			// TODO Auto-generated method stub
+			return false;
+		}
 		
 	}
 	
@@ -203,10 +313,14 @@ public class Graphics {
 		public void remove(GraphicalObject obj) {
 			
 		}
+		
+		public void sortPriority() {
+			
+		}
 
 		@Override
 		public void run() {
-			// TODO Auto-generated method stub
+			
 			
 		}
 		

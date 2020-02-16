@@ -1,6 +1,7 @@
 package game_engine.frontend.graphics;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.JFrame;
 
@@ -26,7 +27,7 @@ public class Graphics {
 	 * Object that can be represented in various forms so it can be "painted" onto the screen
 	 *
 	 */
-	public static class GraphicalObject implements IGraphics {
+	public static class GraphicalObject implements IGraphics, Comparable<GraphicalObject> {
 		
 		private int priorityValue = 0;
 		private int x = 0, y = 0;
@@ -79,7 +80,11 @@ public class Graphics {
 		}
 		
 		public String toString() { //TODO: Finish this whenever this Object is finished.
-			return "";
+			return getPriorityValue() + "";
+		}
+		@Override
+		public int compareTo(GraphicalObject o) {
+			return this.priorityValue - o.getPriorityValue();
 		}
 		
 	}
@@ -197,6 +202,21 @@ public class Graphics {
 			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		}
 		/**
+		 * Defines the length and height of the JFrame, along with its visibility.
+		 * @param xSize is an integer value that determines the size of the frame along the x-axis.
+		 * @param ySize is an integer value that determines the size of the frame along the y-axis.
+		 * @param visible is a boolean value that determines if the JFrame is visible to the user or not.
+		 */
+		public GameFrame(int xSize, int ySize, boolean visible) {
+			f = new JFrame();
+			
+			setXSize(xSize);
+			setYSize(ySize);
+			setVisible(visible);
+			
+			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		}
+		/**
 		 * Defines the length and height, as well as the position of the JFrame. Does NOT set the frame visible to the user.
 		 * @param xSize is an integer value that determines the size of the frame along the x-axis.
 		 * @param ySize is an integer value that determines the size of the frame along the y-axis.
@@ -273,14 +293,25 @@ public class Graphics {
 		 * Contains the list of GraphicalObjects that will be painted
 		 */
 		private ArrayList<GraphicalObject> objectsToBePainted = new ArrayList<GraphicalObject>();
+		/**
+		 * Determines the length of the delay
+		 */
+		private int delay;
 		
 		// Constructors
 		
 		public Painter() {
-			
+			delay = 0;
 		}
-		
+		public Painter(int v) {
+			delay = v;
+		}
+		public Painter(int v, ArrayList<GraphicalObject> array) {
+			delay = v;
+			add(array);
+		}
 		public Painter(ArrayList<GraphicalObject> array) {
+			delay = 0;
 			add(array);
 		}
 		
@@ -290,9 +321,15 @@ public class Graphics {
 		public void setObjectsToBePainted(ArrayList<GraphicalObject> array) {
 			objectsToBePainted = array;
 		}
+		public void setDelay(int v) {
+			delay = v;
+		}
 		
 		public ArrayList<GraphicalObject> getObjectsToBePainted() {
 			return objectsToBePainted;
+		}
+		public int getDelay() {
+			return delay;
 		}
 		
 		// -- End Simple Setter & Getter Methods
@@ -331,7 +368,7 @@ public class Graphics {
 		}
 		
 		public void sortPriority() {
-			
+			Collections.sort(objectsToBePainted);
 		}
 
 		@Override

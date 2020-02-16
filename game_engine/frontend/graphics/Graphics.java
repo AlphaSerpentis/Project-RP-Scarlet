@@ -301,17 +301,17 @@ public class Graphics {
 		// Constructors
 		
 		public Painter() {
-			delay = 0;
+			setDelay(0);
 		}
 		public Painter(int v) {
-			delay = v;
+			setDelay(v);
 		}
 		public Painter(int v, ArrayList<GraphicalObject> array) {
-			delay = v;
+			setDelay(v);
 			add(array);
 		}
 		public Painter(ArrayList<GraphicalObject> array) {
-			delay = 0;
+			setDelay(0);
 			add(array);
 		}
 		

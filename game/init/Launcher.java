@@ -2,7 +2,6 @@ package game.init;
 
 import java.util.ArrayList;
 
-import game_engine.frontend.graphics.Graphics.*;
 import game_engine.frontend.graphics.Graphics.GraphicalObject;
 import game_engine.frontend.graphics.Graphics.Painter;
 import game_engine.frontend.graphics.main.Initializer;
